@@ -1,0 +1,473 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+{% if messages %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<div class="alert alert-info">
+    {% for message in messages %}
+    <p>{{ message }}</p>
+    {% endfor %}
+</div>
+{% endif %}
+<!-- ****** Welcome Slides Area Start ****** -->
+<section class="welcome_area">
+    <div class="welcome_slides owl-carousel">
+        <!-- Single Slide Start -->
+        <div class="single_slide height-800 bg-img background-overlay"
+             style="background-image: url({% static 'img/bg-img/bg-1.jpg' %});">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center">
+                    <div class="col-12">
+                        <div class="welcome_slide_text">
+                            <h6 data-animation="bounceInDown" data-delay="0" data-duration="500ms">* Only today we offer
+                                free shipping</h6>
+                            <h2 data-animation="fadeInUp" data-delay="500ms" data-duration="500ms">Fashion Trends</h2>
+                            <a href="#" class="btn karl-btn" data-animation="fadeInUp" data-delay="1s"
+                               data-duration="500ms">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Single Slide Start -->
+        <div class="single_slide height-800 bg-img background-overlay"
+             style="background-image: url({% static 'img/bg-img/bg-4.jpg' %});">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center">
+                    <div class="col-12">
+                        <div class="welcome_slide_text">
+                            <h6 data-animation="fadeInDown" data-delay="0" data-duration="500ms">* Only today we offer
+                                free shipping</h6>
+                            <h2 data-animation="fadeInUp" data-delay="500ms" data-duration="500ms">Summer
+                                Collection</h2>
+                            <a href="#" class="btn karl-btn" data-animation="fadeInLeftBig" data-delay="1s"
+                               data-duration="500ms">Check Collection</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Single Slide Start -->
+        <div class="single_slide height-800 bg-img background-overlay"
+             style="background-image: url({% static 'img/bg-img/bg-2.jpg' %});">
+            <div class="container h-100">
+                <div class="row h-100 align-items-center">
+                    <div class="col-12">
+                        <div class="welcome_slide_text">
+                            <h6 data-animation="fadeInDown" data-delay="0" data-duration="500ms">* Only today we offer
+                                free shipping</h6>
+                            <h2 data-animation="bounceInDown" data-delay="500ms" data-duration="500ms">Women
+                                Fashion</h2>
+                            <a href="#" class="btn karl-btn" data-animation="fadeInRightBig" data-delay="1s"
+                               data-duration="500ms">Check Collection</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ****** Welcome Slides Area End ****** -->
+
+<!-- ****** Top Catagory Area Start ****** -->
+<section class="top_catagory_area d-md-flex clearfix">
+    <!-- Single Catagory -->
+    <div class="single_catagory_area d-flex align-items-center bg-img"
+         style="background-image: url({% static 'img/bg-img/bg-2.jpg' %});">
+        <div class="catagory-content">
+            <h6>On Accesories</h6>
+            <h2>Sale 30%</h2>
+            <a href="#" class="btn karl-btn">SHOP NOW</a>
+        </div>
+    </div>
+    <!-- Single Catagory -->
+    <div class="single_catagory_area d-flex align-items-center bg-img"
+         style="background-image: url({% static 'img/bg-img/bg-3.jpg' %});">
+        <div class="catagory-content">
+            <h6>in Bags excepting the new collection</h6>
+            <h2>Designer bags</h2>
+            <a href="#" class="btn karl-btn">SHOP NOW</a>
+        </div>
+    </div>
+</section>
+<!-- ****** Top Catagory Area End ****** -->
+
+<!-- ****** Quick View Modal Area Start ****** -->
+<div class="modal fade" id="quickview" tabindex="-1" role="dialog" aria-labelledby="quickview" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <button type="button" class="close btn" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+
+            <div class="modal-body">
+                <div class="quickview_body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 col-lg-5">
+                                <div class="quickview_pro_img">
+                                    <img src="{% static 'img/product-img/product-1.jpg' %}" alt="">
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-7">
+                                <div class="quickview_pro_des">
+                                    <h4 class="title">Boutique Silk Dress</h4>
+                                    <div class="top_seller_product_rating mb-15">
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                        <i class="fa fa-star" aria-hidden="true"></i>
+                                    </div>
+                                    <h5 class="price">$120.99 <span>$130</span></h5>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia expedita
+                                        quibusdam aspernatur, sapiente consectetur accusantium perspiciatis praesentium
+                                        eligendi, in fugiat?</p>
+                                    <a href="#">View Full Product Details</a>
+                                </div>
+                                <!-- Add to Cart Form -->
+                                <form class="cart" method="post">
+                                    <div class="quantity">
+                                        <span class="qty-minus"
+                                              onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 1 ) effect.value--;return false;"><i
+                                                class="fa fa-minus" aria-hidden="true"></i></span>
+
+                                        <input type="number" class="qty-text" id="qty" step="1" min="1" max="12"
+                                               name="quantity" value="1">
+
+                                        <span class="qty-plus"
+                                              onclick="var effect = document.getElementById('qty'); var qty = effect.value; if( !isNaN( qty )) effect.value++;return false;"><i
+                                                class="fa fa-plus" aria-hidden="true"></i></span>
+                                    </div>
+                                    <button type="submit" name="addtocart" value="5" class="cart-submit">Add to cart
+                                    </button>
+                                    <!-- Wishlist -->
+                                    <div class="modal_pro_wishlist">
+                                        <a href="wishlist.html" target="_blank"><i class="ti-heart"></i></a>
+                                    </div>
+                                    <!-- Compare -->
+                                    <div class="modal_pro_compare">
+                                        <a href="compare.html" target="_blank"><i class="ti-stats-up"></i></a>
+                                    </div>
+                                </form>
+
+                                <div class="share_wf mt-30">
+                                    <p>Share With Friend</p>
+                                    <div class="_icon">
+                                        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                                        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                                        <a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a>
+                                        <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ****** Quick View Modal Area End ****** -->
+
+
+<!-- ****** New Arrivals Area Start ****** -->
+<section class="new_arrivals_area section_padding_100_0 clearfix">
+    <!-- ****** SEARCH BAR ****** -->
+    <div class="search-container">
+        <form action="/search" method="get">
+            <input type="text" name="query" class="search-input"
+                   placeholder="Search for styles, brands, or categories...">
+            <button type="submit" class="search-button">
+                <span class="search-icon">🔍</span>
+            </button>
+        </form>
+    </div>
+
+    <style>/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Search Bar Container */
+.search-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+/* Form Styling */
+.search-container form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 600px;
+    background-color: #fff;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Input Styling */
+.search-input {
+    flex: 1;
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    color: #333;
+}
+
+/* Placeholder Styling */
+.search-input::placeholder {
+    color: #aaa;
+}
+
+/* Button Styling */
+.search-button {
+    padding: 12px 18px;
+    background-color: #333;
+    border: none;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: #555;
+}
+
+/* Search Icon Styling */
+.search-icon {
+    font-size: 18px;
+}
+    </style>
+    <!-- ****** SEARCH BAR END ****** -->
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-12">
+
+                <div class="section_heading text-center">
+
+                    {% if query %}
+                    <h2>Search Results for "{{ query }}"</h2>
+                    {% else %}
+                    <h2>ALL PRODUCTS</h2>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww-->
+    <div class="karl-projects-menu mb-100">
+        <div class="text-center portfolio-menu">
+            <a href="{% url 'homepage' %}">
+                <button class="btn active">ALL ({{ total}} )</button>
+            </a>
+            {% for category in categories %}
+            <a href="{% url 'category' category.id %}">
+                <button class="btn">{{ category.name }} ({{ category.product_count }})</button>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row karl-new-arrivals">
+
+            <!-- Single gallery Item Start -->
+            {% for product in products %}
+
+            <div class="col-12 col-sm-6 col-md-4 single_gallery_item women wow fadeInUpBig" data-wow-delay="0.2s">
+                <!-- Product Image -->
+                <div class="product-img">
+                    <img src="{{ product.get_image }}" alt="">
+                    <div class="product-quicview">
+                        <a href="#" data-toggle="modal" data-target="#quickview"><i class="ti-plus"></i></a>
+                    </div>
+                </div>
+                <!-- Product Description -->
+                <div class="product-description">
+                    <h4 class="product-price">{{ product.price }}</h4>
+                    <p>{{ product.description|truncatewords:15 }}</p>
+                    <!-- Add to Cart -->
+
+                    <!--                            eeeeeeeeeeeeeeeeeeeeeeee-->
+
+                    <a href="{% url 'detail' product.id %}" class="add-to-cart-btn">ADD TO CART</a>
+                </div>
+            </div>
+            {% endfor %}
+
+
+        </div>
+    </div>
+</section>
+<!-- ****** New Arrivals Area End ****** -->
+
+<!-- ****** Offer Area Start ****** -->
+<section class="offer_area height-700 section_padding_100 bg-img"
+         style="background-image: url('{% static 'img/bg-5' %});">
+    <div class="container h-100">
+        <div class="row h-100 align-items-end justify-content-end">
+            <div class="col-12 col-md-8 col-lg-6">
+                <div class="offer-content-area wow fadeInUp" data-wow-delay="1s">
+                    <h2>White t-shirt <span class="karl-level">Hot</span></h2>
+                    <p>* Free shipping until 25 Dec 2017</p>
+                    <div class="offer-product-price">
+                        <h3><span class="regular-price">$25.90</span> $15.90</h3>
+                    </div>
+                    <a href="#" class="btn karl-btn mt-30">Shop Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ****** Offer Area End ****** -->
+
+<!-- ****** Popular Brands Area Start ****** -->
+<section class="karl-testimonials-area section_padding_100">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="section_heading text-center">
+                    <h2>Reviews</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-8">
+                <!-- Testimonials Slider -->
+                <div class="karl-testimonials-slides owl-carousel">
+                    {% for review in reviews %}
+                    <!-- Single Testimonial Area -->
+                    <div class="single-testimonial-area text-center p-4 shadow-sm bg-light rounded">
+                        <span class="quote" style="font-size: 2em; color: #ffc107;">“</span>
+                        <h6 class="review-content">{{ review.content }}</h6>
+                        <div class="testimonial-info d-flex align-items-center justify-content-center mt-3">
+                            <div class="tes-thumbnail">
+                                {% if review.author_photo %}
+                                <img src="{{ review.author_photo.url }}" alt="{{ request.user }}" class="rounded-circle"
+                                     style="width: 60px; height: 60px;">
+                                {% else %}
+                                <img src="{% static 'img/bg-img/tes-1.jpg' %}" alt="" class="rounded-circle"
+                                     style="width: 60px; height: 60px;">
+                                {% endif %}
+                            </div>
+                            <div class="testi-data ml-3">
+                                <p class="mb-0"><strong>{{ review.author }}</strong></p>
+                                <span class="text-muted">Client, {{ review.address }}</span>
+                                <!-- Display stars based on the review rate -->
+                                <style>
+                                    .star-x {
+                                    color: #ffc107;
+                                    font-size: 20px;
+                                    }
+                                </style>
+                                {% if review.rate == 1 %}
+                                <h2 class="star-x">★</h2>
+                                {% elif review.rate == 2 %}
+                                <h2 class="star-x">★★</h2>
+                                {% elif review.rate == 3 %}
+                                <h2 class="star-x">★★★</h2>
+                                {% elif review.rate == 4 %}
+                                <h2 class="star-x">★★★★</h2>
+                                {% elif review.rate == 5 %}
+                                <h2 class="star-x">★★★★★</h2>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <!-- Review Form -->
+                {% if request.user.is_authenticated %}
+                <style>
+                    .star-rating {
+                        direction: rtl;
+                        font-size: 1.5em;
+                    }
+                    .star-rating input[type="radio"] {
+                        display: none;
+                    }
+                    .star-rating label {
+                        color: #ccc;
+                        cursor: pointer;
+                    }
+                    .star-rating input[type="radio"]:checked ~ label,
+                    .star-rating label:hover,
+                    .star-rating label:hover ~ label {
+                        color: #ffc107;
+                    }
+                    .review-form {
+                        background-color: #f8f9fa;
+                        padding: 20px;
+                        border-radius: 5px;
+                        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+                        margin-top: 20px;
+                    }
+                    .review-form label {
+                        font-weight: bold;
+                    }
+                    .review-form button {
+                        background-color: #ffc107;
+                        color: #fff;
+                        border: none;
+                        padding: 10px 20px;
+                        border-radius: 5px;
+                        font-weight: bold;
+                    }
+                    .review-form button:hover {
+                        background-color: #e0a800;
+                    }
+                </style>
+                <form enctype="multipart/form-data" method="post" class="review-form mt-4">
+                    {% csrf_token %}
+                    <label>Rate:</label>
+                    <div class="star-rating">
+                        <input type="radio" name="rate" id="rate-5" value="5">
+                        <label for="rate-5" title="5 stars">★</label>
+                        <input type="radio" name="rate" id="rate-4" value="4">
+                        <label for="rate-4" title="4 stars">★</label>
+                        <input type="radio" name="rate" id="rate-3" value="3">
+                        <label for="rate-3" title="3 stars">★</label>
+                        <input type="radio" name="rate" id="rate-2" value="2">
+                        <label for="rate-2" title="2 stars">★</label>
+                        <input type="radio" name="rate" id="rate-1" value="1" required>
+                        <label for="rate-1" title="1 star">★</label>
+                    </div>
+
+                    <label for="content">Content:</label>
+                    <textarea name="content" id="content" class="form-control mb-3" required></textarea>
+
+                    <label for="address">Address:</label>
+                    <input type="text" name="address" id="address" class="form-control mb-3" required>
+
+                    <label for="author_photo">Author Photo:</label>
+                    <input type="file" name="author_photo" id="author_photo" class="form-control mb-3" accept="image/*">
+
+                    <button type="submit" class="btn-submit">Submit Review</button>
+                </form>
+                {% else %}
+                <p class="text-center mt-3">Please log in to submit a review.</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ****** Popular Brands Area End ****** -->
+
+{% endblock content %}
